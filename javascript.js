@@ -1,3 +1,5 @@
+let playerSelection = prompt("Please enter your choice (rock,paper,scissors)");
+
 function ComputerPlay(max) {
   return Math.floor(Math.random() * max);
 }
@@ -9,12 +11,36 @@ if(hisSelection==1)
 if(hisSelection==2)
   computerSelection="scissors";
 
-    function playRound(playerSelection, computerSelection) {
-        if(playerSelection=="rock" && computerSelection=="paper")
-        return ("PLAYER WON.ROCK BEATS PAPER");
-        else return ("PLAYER LOST");
-    }
-    let playerSelection="rock";
+  
+        function playRound(playerSelection, computerSelection) {
+  if(playerSelection=="rock" && computerSelection=="rock")
+  return("egalitate");
 
-//aaaaaaaaaa
+if(playerSelection=="rock" && computerSelection=="paper")
+  return("Ai pierdut!");
+
+if(playerSelection=="rock" && computerSelection=="scissors")
+  return("Ai castigat!");
+
+
+if(playerSelection=="paper" && computerSelection=="rock")
+  return("Ai castigat!");    
+
+if(playerSelection=="paper" && computerSelection=="paper")
+  return("egalitate");
+
+if(playerSelection=="paper" && computerSelection=="scissors")
+  return("Ai pierdut");
+
+
+if(playerSelection=="scissors" && computerSelection=="rock")
+  return("Ai pierdut");
+
+if(playerSelection=="scissors" && computerSelection=="paper")
+  return("Ai castigat");
+if(playerSelection=="scissors" && computerSelection=="scissors")
+  return("egalitate");
+    }
+
+console.log(playRound(playerSelection,computerSelection))
   
