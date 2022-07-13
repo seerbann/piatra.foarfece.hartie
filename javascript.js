@@ -85,3 +85,4 @@ if(playerSelection.toLowerCase()=="scissors" && computerSelection.toLowerCase()=
  }
  }
  game();
+  alert("Scorul tau este: " + yourScore); alert("Scorul calculatorului este " + computersScore);
