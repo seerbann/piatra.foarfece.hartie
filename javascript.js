@@ -13,36 +13,38 @@ if(hisSelection==2)
 
  
         function playRound(playerSelection, computerSelection) {
-  if(playerSelection=="rock" && computerSelection=="rock")
+  if(playerSelection.toLowerCase()=="rock" && computerSelection.toLowerCase()=="rock")
   return("egalitate");
 
-if(playerSelection=="rock" && computerSelection=="paper")
+if(playerSelection.toLowerCase()=="rock" && computerSelection.toLowerCase()=="paper")
   return("Ai pierdut!");
 
-if(playerSelection=="rock" && computerSelection=="scissors")
+if(playerSelection.toLowerCase()=="rock" && computerSelection.toLowerCase()=="scissors")
   return("Ai castigat!");
 
 
-if(playerSelection=="paper" && computerSelection=="rock")
+if(playerSelection.toLowerCase()=="paper" && computerSelection.toLowerCase()=="rock")
   return("Ai castigat!");    
 
-if(playerSelection=="paper" && computerSelection=="paper")
+if(playerSelection.toLowerCase()=="paper" && computerSelection.toLowerCase()=="paper")
   return("egalitate");
 
-if(playerSelection=="paper" && computerSelection=="scissors")
+if(playerSelection.toLowerCase()=="paper" && computerSelection.toLowerCase()=="scissors")
   return("Ai pierdut");
 
 
-if(playerSelection=="scissors" && computerSelection=="rock")
+if(playerSelection.toLowerCase()=="scissors" && computerSelection.toLowerCase()=="rock")
   return("Ai pierdut");
 
-if(playerSelection=="scissors" && computerSelection=="paper")
+if(playerSelection.toLowerCase()=="scissors" && computerSelection.toLowerCase()=="paper")
   return("Ai castigat");
-if(playerSelection=="scissors" && computerSelection=="scissors")
+if(playerSelection.toLowerCase()=="scissors" && computerSelection.toLowerCase()=="scissors")
   return("egalitate");
     }
-
+  let yourScore=0;
+  let computersScore=0;
  function game(){
+
   for(let i=1;i<=5;i++)
  { 
   let playerSelection = prompt("Please enter your choice (rock,paper,scissors)");
@@ -53,7 +55,33 @@ if(playerSelection=="scissors" && computerSelection=="scissors")
   computerSelection="paper";
     if(hisSelection==2)
   computerSelection="scissors";
-  alert(playRound(playerSelection,computerSelection));
+  
+
+      if(playerSelection.toLowerCase()=="rock" && computerSelection=="paper")
+    computersScore++;
+  
+
+      if(playerSelection.toLowerCase()=="rock" && computerSelection=="scissors")
+  yourScore++;
+
+ 
+
+      if(playerSelection.toLowerCase()=="paper" && computerSelection=="rock")
+    yourScore++;
+
+      if(playerSelection.toLowerCase()=="paper" && computerSelection=="scissors")
+   computersScore++;
+
+ 
+
+      if(playerSelection.toLowerCase()=="scissors" && computerSelection=="rock")
+    computersScore++;
+  
+  
+      if(playerSelection.toLowerCase()=="scissors" && computerSelection=="paper")
+  yourScore++;
+
+        alert(playRound(playerSelection,computerSelection) );
  }
  }
  game();
